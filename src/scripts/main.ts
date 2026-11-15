@@ -301,29 +301,30 @@ function sectionMotion() {
     });
   }
 
-  // Impact: the terminal holds still while the receipt prints upward; figures count up as they appear.
+  // Impact: the terminal stays in the layout, top-aligned with the "Impact" label. Once it is in view,
+  // the receipt prints upward at its own pace and the figures count up as each line appears.
   const receipt = $('[data-receipt]');
   const terminal = $('[data-terminal]');
   if (receipt && terminal) {
     const items = $$('[data-receipt-item]', receipt);
     const nums = items.map((it) => $('[data-count]', it)!);
     nums.forEach((n) => (n.textContent = `${n.dataset.prefix}0${n.dataset.suffix}`));
-    const fits = () => terminal.offsetHeight < window.innerHeight * 0.86;
-    gsap.fromTo(receipt, { yPercent: 100 }, {
-      yPercent: 0, ease: 'none',
-      scrollTrigger: {
-        trigger: terminal,
-        start: () => (fits() ? 'top 12%' : 'bottom bottom-=12'),
-        end: () => '+=' + Math.round(Math.max(480, window.innerHeight * 0.7)),
-        pin: true,
-        scrub: 0.6,
-        invalidateOnRefresh: true,
-        onUpdate(self) {
-          const shown = self.progress * receipt.offsetHeight;
-          items.forEach((it, i) => { if (it.offsetTop + it.offsetHeight * 0.6 < shown) countUp(nums[i]); });
-          if (self.progress > 0.98) nums.forEach(countUp);
-        },
+    const print = gsap.fromTo(receipt, { yPercent: 100 }, {
+      yPercent: 0, duration: 2.8, ease: 'power1.inOut', paused: true,
+      onUpdate(this: gsap.core.Tween) {
+        const shown = this.progress() * receipt.offsetHeight;
+        items.forEach((it, i) => { if (it.offsetTop + it.offsetHeight * 0.6 < shown) countUp(nums[i]); });
       },
+      onComplete: () => nums.forEach(countUp),
+    });
+    const fits = () => terminal.offsetHeight < window.innerHeight * 0.9;
+    ScrollTrigger.create({
+      trigger: terminal,
+      start: () => (fits() ? 'bottom 95%' : 'top 35%'),
+      end: 'max',
+      once: true,
+      invalidateOnRefresh: true,
+      onEnter: () => print.play(),
     });
   }
 
