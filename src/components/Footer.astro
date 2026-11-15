@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/logo-df.png';
+import logo from '../assets/logo-df-negative.png';
 import type { Content } from '../i18n/content';
 interface Props { t: Content }
 const { t } = Astro.props;
@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
   <div class="wrap">
     <div class="footer-top">
       <a class="footer-icon" href="#top" data-scroll-to="#top" aria-label="Davit Febuan, back to top">
-        <Image src={logo} alt="" width={36} height={36} densities={[1, 2]} />
+        <Image src={logo} alt="" width={44} height={44} densities={[1, 2]} />
       </a>
       <a class="link-line" href="#top" data-scroll-to="#top">{t.footer.top} ↑</a>
     </div>
