@@ -33,16 +33,6 @@ function scrollToTarget(sel: string) {
   }
 }
 
-/* ---------------- Jakarta clock ---------------- */
-const clockFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Jakarta' });
-const clocks = $$('[data-clock]');
-const tickClock = () => {
-  const time = clockFmt.format(new Date());
-  clocks.forEach((el) => (el.textContent = `JKT ${time} · GMT+7`));
-};
-tickClock();
-setInterval(tickClock, 15000);
-
 /* ---------------- Navigation ---------------- */
 const nav = $('#nav')!;
 const menu = $('[data-menu]')!;

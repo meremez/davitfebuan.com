@@ -156,7 +156,6 @@ body::before {
   background: var(--gold); transform: translateX(-50%);
 }
 .nav-tools { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
-.clock { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.06em; color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .lang {
   display: inline-flex; align-items: center; gap: 2px; padding: 4px; border: 1px solid var(--line); border-radius: 999px;
   font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.06em;
@@ -181,7 +180,7 @@ body::before {
 .menu .label { color: var(--on-dark-2); }
 
 @media (max-width: 960px) {
-  .nav-links, .nav-tools .clock { display: none; }
+  .nav-links { display: none; }
   .nav-tools { margin-left: auto; }
   .menu-btn {
     display: inline-flex; align-items: center; gap: 8px; background: none; border: 1px solid var(--line);
