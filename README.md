@@ -36,7 +36,7 @@ npm run og                # render ulang gambar Open Graph di public/
   - `FTP_USERNAME`
   - `FTP_PASSWORD`
 - Opsional, di tab **Variables**:
-  - `FTP_SERVER_DIR` (default `public_html/`). Akhiri dengan `/`.
+  - `FTP_SERVER_DIR` (default `./`, untuk akun FTP khusus yang Directory-nya `public_html`). Isi `public_html/` hanya kalau memakai akun cPanel utama.
   - `FTP_PROTOCOL` (default `ftps`; pakai `ftp` hanya kalau FTPS ditolak server)
   - `FTP_PORT` (default `21`)
 

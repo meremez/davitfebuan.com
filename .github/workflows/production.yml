@@ -56,7 +56,9 @@ jobs:
           protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
           port: ${{ vars.FTP_PORT || 21 }}
           local-dir: ./dist/
-          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
+          # Default "./": the deploy FTP account is rooted at the site's document root (public_html).
+          # Set the FTP_SERVER_DIR variable to "public_html/" only when using the main cPanel account.
+          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
           exclude: |
             **/.git*
             **/.git*/**
