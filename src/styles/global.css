@@ -447,10 +447,9 @@ body::before {
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: var(--on-dark); padding-top: clamp(64px, 8vw, 112px); padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px)); overflow: hidden; }
-.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid var(--on-dark-line); }
+.footer-top { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid var(--on-dark-line); }
 .footer-top .label { color: var(--on-dark-2); }
 .footer-top a { color: var(--on-dark); }
-.footer-time { font-family: var(--font-mono); font-size: 0.875rem; font-variant-numeric: tabular-nums; }
 .wordmark {
   font-family: var(--font-display); font-size: clamp(3.6rem, 16.2vw, 15.5rem); line-height: 0.82; letter-spacing: -0.06em;
   font-variation-settings: 'opsz' 144, 'wght' 360; white-space: nowrap; padding-top: clamp(32px, 5vw, 64px); color: var(--on-dark);
