@@ -454,7 +454,7 @@ body::before {
 .footer-top .label { color: var(--on-dark-2); }
 .footer-top a { color: var(--on-dark); }
 .wordmark {
-  font-family: var(--font-display); font-size: clamp(3.6rem, 16.2vw, 15.5rem); line-height: 0.82; letter-spacing: -0.06em;
+  font-family: var(--font-display); font-size: clamp(1.44rem, 6.48vw, 6.2rem); line-height: 0.82; letter-spacing: -0.06em;
   font-variation-settings: 'opsz' 144, 'wght' 360; white-space: nowrap; padding-top: clamp(32px, 5vw, 64px); color: var(--on-dark);
 }
 .wordmark em { font-style: italic; color: var(--peach); font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 320; }
