@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-df.png';
+import type { Content, Lang } from '../i18n/content';
+interface Props { t: Content; lang: Lang }
+const { t, lang } = Astro.props;
+const home = lang === 'en' ? '/' : '/id/';
+const links = [
+  ['story', t.nav.story], ['journey', t.nav.journey], ['expertise', t.nav.expertise],
+  ['impact', t.nav.impact], ['contact', t.nav.contact],
+] as const;
+---
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-mark" href={home + '#top'} data-scroll-to="#top" aria-label="Davit Febuan, home">
+      <Image src={logo} alt="" width={34} height={34} loading="eager" />
+      <span>Davit Febuan</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      {links.map(([id, label]) => <a href={'#' + id} data-scroll-to={'#' + id} data-spy={id}>{label}</a>)}
+    </nav>
+    <div class="nav-tools">
+      <span class="clock" data-clock aria-label={t.footer.local}>JKT · GMT+7</span>
+      <div class="lang" role="group" aria-label="Language">
+        {lang === 'en'
+          ? <><span aria-current="true">EN</span><a href="/id/" hreflang="id" lang="id" data-lang-link aria-label="Bahasa Indonesia">ID</a></>
+          : <><a href="/" hreflang="en" lang="en" data-lang-link aria-label="English">EN</a><span aria-current="true">ID</span></>}
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-btn
+        data-open={t.nav.menu} data-close={t.nav.close}>{t.nav.menu}</button>
+    </div>
+  </div>
+  <div class="progress" data-progress aria-hidden="true"></div>
+</header>
+<div class="menu" id="menu" hidden data-menu>
+  <ol>
+    {links.map(([id, label]) => <li><a href={'#' + id} data-scroll-to={'#' + id}>{label}</a></li>)}
+  </ol>
+  <div class="label" data-clock>JKT · GMT+7</div>
+</div>

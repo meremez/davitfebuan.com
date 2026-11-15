@@ -1,0 +1,51 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../assets/davit-portrait.jpg';
+import type { Content } from '../i18n/content';
+interface Props { t: Content }
+const { t } = Astro.props;
+---
+<section class="hero" id="top" aria-labelledby="hero-name">
+  <div class="wrap">
+    <div class="hero-top">
+      <p class="label" data-hero-fade>{t.hero.eyebrow}</p>
+      <p class="label" data-hero-fade>Jakarta · 6.2088° S, 106.8456° E</p>
+    </div>
+    <div class="hero-grid">
+      <h1 class="hero-name" id="hero-name" data-hero-name>
+        <span class="row">Davit</span>
+        <span class="row"><em>Febuan</em></span>
+      </h1>
+      <figure class="hero-photo" data-hero-photo>
+        <div class="frame-outer">
+        <div class="frame">
+          <Picture src={portrait} formats={['avif', 'webp']} alt="Portrait of Davit Febuan" widths={[360, 540, 720]}
+            sizes="(max-width: 640px) 62vw, 360px" loading="eager" fetchpriority="high" data-parallax />
+        </div>
+        </div>
+        <figcaption class="label"><span>Davit Febuan</span><span>Jakarta</span></figcaption>
+      </figure>
+      <div class="hero-bottom">
+        <p class="hero-statement" data-hero-statement>{t.hero.statement}</p>
+        <div class="hero-side" data-hero-fade>
+          <dl class="facts">
+            {t.hero.facts.map((f) => <div><dt>{f.k}</dt><dd>{f.v}</dd></div>)}
+          </dl>
+          <div class="hero-actions">
+            <a class="btn" href="#contact" data-scroll-to="#contact" data-magnetic>{t.hero.cta} <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-line" href="#story" data-scroll-to="#story">{t.hero.scroll} <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="marquee" aria-hidden="true" data-marquee>
+  <div class="marquee-track" data-marquee-track>
+    {[0, 1].map(() => (
+      <div class="marquee-group">
+        {t.marquee.map((m) => <><span class="marquee-item">{m}</span><span class="marquee-dot"></span></>)}
+      </div>
+    ))}
+  </div>
+</div>

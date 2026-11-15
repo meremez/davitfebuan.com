@@ -1,0 +1,44 @@
+---
+import type { Content, Lang } from '../i18n/content';
+interface Props { t: Content; lang: Lang }
+const { t, lang } = Astro.props;
+const r = t.impact.receipt;
+const fmt = (s: (typeof t.impact.stats)[number]) => `${s.prefix ?? ''}${s.value}${s.suffix ?? ''}`;
+const today = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'id-ID', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Jakarta' }).format(new Date());
+---
+<section class="section impact" id="impact" aria-labelledby="impact-heading">
+  <div class="wrap impact-grid">
+    <div class="impact-copy">
+      <span class="label">{t.impact.label}</span>
+      <h2 id="impact-heading" data-split>{t.impact.heading}</h2>
+      <p data-fade>{t.impact.note}</p>
+      <div class="impact-list" data-fade>
+        {t.impact.stats.slice(0, 4).map((s) => <div><strong>{fmt(s)}</strong><span>{s.label}</span></div>)}
+      </div>
+    </div>
+    <div class="terminal" data-terminal>
+      <div class="paper-clip">
+        <div class="receipt" data-receipt role="group" aria-label={t.impact.label}>
+          <div class="c merchant">{r.merchant}</div>
+          <div class="c">{r.sub}</div>
+          <hr class="rule" />
+          <div class="row"><span>TXN</span><span>{r.type}</span></div>
+          <div class="row"><span>{r.dateLabel}</span><span data-receipt-date>{today.toUpperCase()}</span></div>
+          <hr class="rule" />
+          {t.impact.stats.map((s) => (
+            <div class="item" data-receipt-item>
+              <b data-count={s.value} data-prefix={s.prefix ?? ''} data-suffix={s.suffix ?? ''}>{fmt(s)}</b>
+              <span>{s.label}</span>
+            </div>
+          ))}
+          <hr class="rule" />
+          <div class="c status">{r.status}</div>
+          <div class="c"><span class="stamp">✓ {r.status.split(': ')[1]}</span></div>
+          <div class="barcode" aria-hidden="true"></div>
+          <div class="c">*** {r.thanks} ***</div>
+        </div>
+      </div>
+      <div class="slot" aria-hidden="true"><span class="led"></span><span class="label">EDC · PRINT</span></div>
+    </div>
+  </div>
+</section>

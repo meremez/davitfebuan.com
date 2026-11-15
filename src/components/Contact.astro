@@ -1,0 +1,39 @@
+---
+import { LINKEDIN, type Content } from '../i18n/content';
+interface Props { t: Content }
+const { t } = Astro.props;
+const f = t.contact.form;
+---
+<section class="section contact" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap contact-grid">
+    <div class="contact-head">
+      <span class="label">{t.contact.label}</span>
+      <h2 id="contact-heading" data-split>{t.contact.heading}</h2>
+      <p data-fade>{t.contact.note}</p>
+      <p class="contact-alt" data-fade>
+        <span>{t.contact.alt}</span>
+        <a class="link-line" href={LINKEDIN} target="_blank" rel="noopener">linkedin.com/in/davit-febuan ↗</a>
+      </p>
+    </div>
+    <form class="form" id="contact-form" novalidate data-form
+      data-sending={f.sending} data-success={f.success} data-error={f.error} data-preview={f.preview}>
+      <div class="field">
+        <label for="cf-name">{f.name}</label>
+        <input id="cf-name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="cf-email">{f.email}</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="cf-message">{f.message}</label>
+        <textarea id="cf-message" name="message" rows="4" required></textarea>
+      </div>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden />
+      <div class="form-foot">
+        <button class="btn" type="submit" data-magnetic>{f.submit} <span class="arrow" aria-hidden="true">→</span></button>
+        <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import type { Content } from '../i18n/content';
+interface Props { t: Content }
+const { t } = Astro.props;
+---
+<section class="section expertise" id="expertise" aria-labelledby="exp-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">{t.expertise.label}</span>
+      <h2 id="exp-heading" data-split>{t.expertise.heading}</h2>
+    </div>
+    <div class="exp-grid" data-tabs>
+      <div class="exp-tabs" role="tablist" aria-label={t.expertise.label}>
+        {t.expertise.groups.map((g, i) => (
+          <button class="exp-tab" type="button" role="tab" id={`exp-tab-${i}`} aria-controls={`exp-panel-${i}`}
+            aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-tab={i}>
+            <span class="t">{g.title}</span>
+            <span class="ico" aria-hidden="true">→</span>
+          </button>
+        ))}
+      </div>
+      <div class="exp-panels">
+        {t.expertise.groups.map((g, i) => (
+          <div class="exp-panel" role="tabpanel" id={`exp-panel-${i}`} aria-labelledby={`exp-tab-${i}`} hidden={i !== 0} data-panel={i}>
+            <span class="label">{g.title}</span>
+            <ul>{g.items.map((item) => <li>{item}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

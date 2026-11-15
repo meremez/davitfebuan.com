@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "DEPLOY_TARGET=staging npm run build",
+  "outputDirectory": "dist",
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}

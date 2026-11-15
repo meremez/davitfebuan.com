@@ -1,0 +1,36 @@
+---
+import { LINKEDIN, type Content } from '../i18n/content';
+interface Props { t: Content }
+const { t } = Astro.props;
+const first = t.journey.stops[0];
+---
+<section class="section journey" id="journey" aria-labelledby="journey-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">{t.journey.label}</span>
+      <h2 id="journey-heading" data-split>{t.journey.heading}</h2>
+    </div>
+    <div class="journey-grid">
+      <div class="journey-sticky" aria-hidden="true">
+        <div class="year" data-year><span>{first.short}</span></div>
+        <span class="chapter-tag label" data-chapter-tag data-chapter={first.chapter}><i></i><span>{t.journey.chapterNames[first.chapter]}</span></span>
+      </div>
+      <div class="stops" data-stops data-chapter-physical={t.journey.chapterNames.physical} data-chapter-digital={t.journey.chapterNames.digital}>
+        <div class="route" aria-hidden="true"><div class="route-fill" data-route-fill></div></div>
+        <ol>
+        {t.journey.stops.map((s) => (
+          <li class="stop" data-stop data-short={s.short} data-chapter={s.chapter}>
+            <span class="stop-date label">{s.date}</span>
+            <h3>{s.role}</h3>
+            {s.company && <span class="company">{s.company}</span>}
+            <p>{s.body}</p>
+          </li>
+        ))}
+        </ol>
+      </div>
+    </div>
+    <div class="journey-more">
+      <a class="link-line" href={LINKEDIN} target="_blank" rel="noopener">{t.journey.more} <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
