@@ -7,7 +7,7 @@ Website personal Davit Febuan. Dibangun dengan [Astro](https://astro.build), [GS
 | Lingkungan | Tempat | Sumber | Cara update |
 |---|---|---|---|
 | Review | Artifact di claude.ai (privat) | working copy | Komentar di artifact, Claude edit lalu publish ulang |
-| Staging | Vercel | branch `staging` | `git push origin staging` |
+| Staging | Vercel: https://davitfebuancom-git-staging-davitfebuan.vercel.app | branch `staging` | `git push origin staging` |
 | Production | DomaiNesia (FTPS) | branch `main` | `git push origin staging:main` (fast-forward), GitHub Actions upload |
 
 Production selalu menjalankan commit yang sama persis dengan staging, karena `main` hanya bergerak dengan fast-forward ke `staging`.

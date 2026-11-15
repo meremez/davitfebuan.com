@@ -7,6 +7,11 @@ Personal site for Davit Febuan (operations leader, digital payment & e-channel, 
 - The owner leaves comments there. For each comment: edit the source, run `npm run build:artifact`, publish `dist-artifact/index.html` with `files` from `node scripts/artifact-files.mjs`, reply on the thread, resolve it.
 - Paths starting with `_` are reserved by the artifact host, hence the `assets/` folder for that target.
 
+## Staging
+- Vercel project `davitfebuan.com` (team `davitfebuan`, id prj_SDsD2a5MpPa1uTYYIeU1d3jy7dSx), linked to GitHub `meremez/davitfebuan.com`.
+- Stable staging URL (branch alias): https://davitfebuancom-git-staging-davitfebuan.vercel.app
+- Vercel's production branch is still `main`, but `vercel.json` disables deploys from `main`, so every `staging` push is a preview deployment served at the branch alias above. Behind Vercel Authentication (owner must be logged in).
+
 ## Commands the owner uses
 - "edit ..." / a comment on the artifact → change source, republish the artifact. Do not push.
 - "push to staging" → commit, then `git push origin staging`. Vercel builds it (production branch in Vercel = `staging`).
