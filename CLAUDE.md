@@ -28,6 +28,8 @@ Personal site for Davit Febuan (operations leader, digital payment & e-channel, 
 - Copy lives in `src/i18n/content.ts`. Fact sources: the original site, the owner's CV (received 2026-11-24) and the owner's own statements. Ask before adding any other claim (numbers, employers, dates).
 - Persona (agreed 2026-11-24): the operator who keeps digital payment infrastructure running (ATM, EDC, QRIS), applying supply chain discipline to it. Avoid "machines behind digital payments" phrasing; say infrastructure, or name ATM/EDC directly. Full-circle story: Bank Mega merchant ops 2007–2011, back as E-Channel Services Head in 2024.
 - Current Bank Mega figures: only the >99.8% monthly availability is public. Never publish ATM, EDC, QRIS or vendor counts (owner, 2026-11-24).
+- Testimonials: LinkedIn recommendation excerpts, verbatim, shown with initials only (AH, TS, EG) and "worked together at CT Corp Digital" (owner approved 2026-11-24). Never full names or current employers.
+- Credentials follow the owner's LinkedIn list; Six Sigma Black Belt is 2024 (owner confirmed). ISO 9001 (2012) and ISO 45001 (2019) are separate entries.
 - CT Corp Digital: describe the businesses by type (retail & grocery delivery, digital bank, beauty platform), not by brand name, on the public site.
 - Positioning is discreet: no "open to work" / "new role" language (owner is currently employed).
 - Motion stays refined: no WebGL, custom cursors or preloaders. Respect `prefers-reduced-motion`.

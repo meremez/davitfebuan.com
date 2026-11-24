@@ -1,0 +1,26 @@
+---
+import type { Content } from '../i18n/content';
+interface Props { t: Content }
+const { t } = Astro.props;
+const tt = t.testimonials;
+---
+<section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">{tt.label}</span>
+      <h2 id="testimonials-heading" data-split>{tt.heading}</h2>
+    </div>
+    <div class="quotes" data-fade>
+      {t.quotes.map((q) => (
+        <figure class="quote">
+          <blockquote lang="en"><p><span class="qmark" aria-hidden="true">“</span>{q.text}”</p></blockquote>
+          <figcaption>
+            <span class="initials">{q.initials}</span>
+            <span class="label">{tt.context}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="quotes-note label">{tt.note}</p>
+  </div>
+</section>

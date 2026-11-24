@@ -31,9 +31,11 @@ const shared = {
     'ATM Operations', 'EDC', 'QRIS', 'Payment Gateway', 'Vendor & SLA', 'S&OP',
     'Reverse Logistics', 'Inventory Control', '3PL', 'Lean Six Sigma', 'Customer Service Set-up',
   ],
-  certs: [
-    { name: 'Six Sigma Black Belt', meta: 'Coursera, 2024' },
-    { name: 'ISO 9001:2008 & ISO 45001:2018', meta: 'Sintegral, 2012' },
+  // LinkedIn recommendations, quoted verbatim. Shown with initials only (owner approved, 2026-11-24).
+  quotes: [
+    { initials: 'AH', text: 'His strategic thinking, understanding of economics, and strong managerial skills were instrumental in negotiating favorable deals with our logistics partners and fostering a cohesive and high-performing team.' },
+    { initials: 'TS', text: 'He orchestrated his team extremely well and provided clear visibility that brought an ease for me to manage the Business team overall delivery.' },
+    { initials: 'EG', text: 'Davit consistently exhibited a calm and composed manner, taking complete ownership of the tasks at hand.' },
   ],
 };
 
@@ -155,8 +157,22 @@ export const content = {
         { year: '2017', value: 5, suffix: '%+', label: 'Annual cost reduction, every year after' },
       ] as Stat[],
     },
+    testimonials: {
+      label: 'In their words',
+      heading: 'From the people I worked with',
+      context: 'Worked together at CT Corp Digital',
+      note: 'Excerpts from LinkedIn recommendations.',
+    },
     credentials: {
       label: 'Credentials',
+      items: [
+        { name: 'SPPUR Level 5 · Payment Services', meta: 'Praveena Banking Competency Center, 2025' },
+        { name: 'Payment Transaction Processing Training, Level 5', meta: 'Praveena Banking Competency Center, 2025' },
+        { name: 'Six Sigma Black Belt', meta: 'Coursera, 2024' },
+        { name: 'Lean Production System', meta: 'YDBA, 2016' },
+        { name: 'ISO 45001:2018 Occupational Health & Safety Management Systems', meta: 'Sintegral, 2019' },
+        { name: 'ISO 9001:2008 Internal Auditor', meta: 'Sintegral, 2012' },
+      ],
       degree: { name: 'Bachelor’s Degree, Bina Nusantara University', meta: 'Jakarta, 2002–2006' },
     },
     contact: {
@@ -292,8 +308,22 @@ export const content = {
         { year: '2017', value: 5, suffix: '%+', label: 'Penurunan biaya, setiap tahun setelahnya' },
       ] as Stat[],
     },
+    testimonials: {
+      label: 'Kata mereka',
+      heading: 'Dari rekan yang pernah bekerja bersama saya',
+      context: 'Bekerja bersama di CT Corp Digital',
+      note: 'Kutipan dari rekomendasi LinkedIn, dalam bahasa aslinya.',
+    },
     credentials: {
       label: 'Sertifikasi & Pendidikan',
+      items: [
+        { name: 'SPPUR Jenjang 5 · Layanan Pembayaran', meta: 'Praveena Banking Competency Center, 2025' },
+        { name: 'Pelatihan Payment Transaction Processing, Jenjang 5', meta: 'Praveena Banking Competency Center, 2025' },
+        { name: 'Six Sigma Black Belt', meta: 'Coursera, 2024' },
+        { name: 'Lean Production System', meta: 'YDBA, 2016' },
+        { name: 'ISO 45001:2018 Sistem Manajemen K3', meta: 'Sintegral, 2019' },
+        { name: 'ISO 9001:2008 Internal Auditor', meta: 'Sintegral, 2012' },
+      ],
       degree: { name: 'Sarjana (S1), Universitas Bina Nusantara', meta: 'Jakarta, 2002–2006' },
     },
     contact: {

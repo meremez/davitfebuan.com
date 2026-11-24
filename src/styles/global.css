@@ -466,6 +466,23 @@ body::before {
 .impact-featured span { color: var(--on-dark-2); }
 .receipt .item span em { font-style: normal; font-weight: 500; color: #26221d; }
 
+/* ---------- Testimonials ---------- */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 32px; }
+.quote { margin: 0; display: grid; gap: 28px; align-content: space-between; padding-top: 28px; border-top: 1px solid var(--ink); min-width: 0; }
+.quote blockquote { margin: 0; }
+.quote blockquote p {
+  font-family: var(--font-display); font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.38; letter-spacing: -0.005em;
+  font-variation-settings: 'opsz' 72; text-wrap: pretty;
+}
+.quote .qmark { color: var(--gold-2); }
+.quote figcaption { display: flex; align-items: center; gap: 14px; }
+.initials {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  background: var(--paper-2); color: var(--ink); font-family: var(--font-mono); font-size: 0.8125rem; letter-spacing: 0.06em;
+}
+.quotes-note { margin-top: 28px; color: var(--ink-3); }
+@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; gap: 40px; } }
+
 /* ---------- Credentials ---------- */
 .credentials { padding-top: 0; }
 .cred-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 24px; padding-top: var(--section); }
