@@ -6,7 +6,7 @@ interface Props { t: Content; lang: Lang }
 const { t, lang } = Astro.props;
 const home = lang === 'en' ? '/' : '/id/';
 const links = [
-  ['story', t.nav.story], ['journey', t.nav.journey], ['expertise', t.nav.expertise],
+  ['story', t.nav.story], ['lifecycle', t.nav.lifecycle], ['journey', t.nav.journey], ['expertise', t.nav.expertise],
   ['impact', t.nav.impact], ['contact', t.nav.contact],
 ] as const;
 ---

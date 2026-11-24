@@ -83,7 +83,7 @@ const progress = $('[data-progress]');
 if (progress) gsap.to(progress, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } });
 
 const spyLinks = $$<HTMLAnchorElement>('[data-spy]');
-['story', 'journey', 'expertise', 'impact', 'contact'].forEach((id) => {
+['story', 'lifecycle', 'journey', 'expertise', 'impact', 'contact'].forEach((id) => {
   const section = document.getElementById(id);
   if (!section) return;
   ScrollTrigger.create({
@@ -98,38 +98,47 @@ const spyLinks = $$<HTMLAnchorElement>('[data-spy]');
   });
 });
 
-/* ---------------- Expertise tabs ---------------- */
-const tabs = $$<HTMLButtonElement>('[data-tab]');
-const panels = $$('[data-panel]');
-function selectTab(index: number, focus = false) {
+/* ---------------- Tab groups (Expertise, Lifecycle) ---------------- */
+$$('[data-tabs]').forEach((group) => {
+  const tabs = $$<HTMLButtonElement>('[data-tab]', group);
+  const panels = $$('[data-panel]', group);
+  const fill = $('[data-cycle-fill]', group);
+  const selectTab = (index: number, focus = false) => {
+    tabs.forEach((tab, i) => {
+      const on = i === index;
+      tab.setAttribute('aria-selected', String(on));
+      tab.classList.toggle('is-past', i < index);
+      tab.tabIndex = on ? 0 : -1;
+      if (on && focus) tab.focus();
+    });
+    panels.forEach((panel, i) => {
+      const show = i === index;
+      if (show && panel.hidden) {
+        panel.hidden = false;
+        if (!reduce) gsap.fromTo($$('.label, p, li', panel), { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.55, stagger: 0.05, ease: 'power3.out' });
+      } else if (!show) panel.hidden = true;
+    });
+    if (fill) {
+      const scale = tabs.length > 1 ? index / (tabs.length - 1) : 0;
+      if (reduce) gsap.set(fill, { scaleX: scale });
+      else gsap.to(fill, { scaleX: scale, duration: 0.6, ease: 'power3.out' });
+    }
+  };
   tabs.forEach((tab, i) => {
-    const on = i === index;
-    tab.setAttribute('aria-selected', String(on));
-    tab.tabIndex = on ? 0 : -1;
-    if (on && focus) tab.focus();
+    tab.addEventListener('click', () => selectTab(i));
+    tab.addEventListener('keydown', (e) => {
+      const k = e.key;
+      if (k === 'ArrowDown' || k === 'ArrowRight') { e.preventDefault(); selectTab((i + 1) % tabs.length, true); }
+      if (k === 'ArrowUp' || k === 'ArrowLeft') { e.preventDefault(); selectTab((i - 1 + tabs.length) % tabs.length, true); }
+      if (k === 'Home') { e.preventDefault(); selectTab(0, true); }
+      if (k === 'End') { e.preventDefault(); selectTab(tabs.length - 1, true); }
+    });
+    if (finePointer) {
+      let timer = 0;
+      tab.addEventListener('pointerenter', () => { timer = window.setTimeout(() => selectTab(i), 140); });
+      tab.addEventListener('pointerleave', () => window.clearTimeout(timer));
+    }
   });
-  panels.forEach((panel, i) => {
-    const show = i === index;
-    if (show && panel.hidden) {
-      panel.hidden = false;
-      if (!reduce) gsap.fromTo($$('li, .label', panel), { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.55, stagger: 0.05, ease: 'power3.out' });
-    } else if (!show) panel.hidden = true;
-  });
-}
-tabs.forEach((tab, i) => {
-  tab.addEventListener('click', () => selectTab(i));
-  tab.addEventListener('keydown', (e) => {
-    const k = e.key;
-    if (k === 'ArrowDown' || k === 'ArrowRight') { e.preventDefault(); selectTab((i + 1) % tabs.length, true); }
-    if (k === 'ArrowUp' || k === 'ArrowLeft') { e.preventDefault(); selectTab((i - 1 + tabs.length) % tabs.length, true); }
-    if (k === 'Home') { e.preventDefault(); selectTab(0, true); }
-    if (k === 'End') { e.preventDefault(); selectTab(tabs.length - 1, true); }
-  });
-  if (finePointer) {
-    let timer = 0;
-    tab.addEventListener('pointerenter', () => { timer = window.setTimeout(() => selectTab(i), 140); });
-    tab.addEventListener('pointerleave', () => window.clearTimeout(timer));
-  }
 });
 
 /* ---------------- Contact form ---------------- */
@@ -286,9 +295,9 @@ function sectionMotion() {
         }
       }
       if (tag) {
-        const ch = stop.dataset.chapter as 'physical' | 'digital';
+        const ch = stop.dataset.chapter ?? '';
         tag.dataset.chapter = ch;
-        const label = stopsWrap.dataset[ch === 'physical' ? 'chapterPhysical' : 'chapterDigital'];
+        const label = stopsWrap.dataset['chapter' + ch.charAt(0).toUpperCase() + ch.slice(1)];
         const text = tag.querySelector('span');
         if (text && label) text.textContent = label;
       }

@@ -3,6 +3,7 @@ import type { Content } from '../i18n/content';
 interface Props { t: Content }
 const { t } = Astro.props;
 const words = t.story.lead.split(' ');
+const chapters = t.story.chapters;
 ---
 <section class="section story" id="story" aria-labelledby="story-label">
   <div class="wrap story-grid">
@@ -15,21 +16,22 @@ const words = t.story.lead.split(' ');
         <p>{t.story.p2}</p>
         <p>{t.story.p3}</p>
       </div>
-      <div class="chapters" data-fade>
-        <article class="chapter">
-          <span class="label">{t.story.chapters[0].tag}</span>
-          <h3>{t.story.chapters[0].title}</h3>
-          <p>{t.story.chapters[0].items}</p>
-        </article>
-        <div class="chapter-link" aria-hidden="true">
-          <svg viewBox="0 0 48 14" fill="none"><path d="M0 7h45M39 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" /></svg>
-        </div>
-        <article class="chapter">
-          <span class="label">{t.story.chapters[1].tag}</span>
-          <h3>{t.story.chapters[1].title}</h3>
-          <p>{t.story.chapters[1].items}</p>
-        </article>
-      </div>
+      <ol class="chapters" data-fade>
+        {chapters.map((c, i) => (
+          <>
+            <li class="chapter" data-chapter-index={i}>
+              <span class="label">{c.tag}</span>
+              <h3>{c.title}</h3>
+              <p>{c.items}</p>
+            </li>
+            {i < chapters.length - 1 && (
+              <li class="chapter-link" aria-hidden="true">
+                <svg viewBox="0 0 48 14" fill="none"><path d="M0 7h45M39 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" /></svg>
+              </li>
+            )}
+          </>
+        ))}
+      </ol>
     </div>
   </div>
 </section>

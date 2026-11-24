@@ -15,7 +15,7 @@ const first = t.journey.stops[0];
         <div class="year" data-year><span>{first.short}</span></div>
         <span class="chapter-tag label" data-chapter-tag data-chapter={first.chapter}><i></i><span>{t.journey.chapterNames[first.chapter]}</span></span>
       </div>
-      <div class="stops" data-stops data-chapter-physical={t.journey.chapterNames.physical} data-chapter-digital={t.journey.chapterNames.digital}>
+      <div class="stops" data-stops data-chapter-payments={t.journey.chapterNames.payments} data-chapter-supply={t.journey.chapterNames.supply} data-chapter-digital={t.journey.chapterNames.digital}>
         <div class="route" aria-hidden="true"><div class="route-fill" data-route-fill></div></div>
         <ol>
         {t.journey.stops.map((s) => (

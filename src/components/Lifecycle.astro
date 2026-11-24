@@ -1,0 +1,44 @@
+---
+import type { Content } from '../i18n/content';
+interface Props { t: Content }
+const { t } = Astro.props;
+const l = t.lifecycle;
+---
+<section class="section lifecycle" id="lifecycle" aria-labelledby="lifecycle-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">{l.label}</span>
+      <h2 id="lifecycle-heading" data-split>{l.heading}</h2>
+      <p class="lifecycle-intro" data-fade>{l.intro}</p>
+    </div>
+    <div class="cycle" data-tabs>
+      <div class="cycle-track" role="tablist" aria-label={t.a11y.stages}>
+        {l.stages.map((s, i) => (
+          <button class="cycle-step" type="button" role="tab" id={`cycle-tab-${i}`} aria-controls={`cycle-panel-${i}`}
+            aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-tab={i}>
+            <span class="cycle-dot" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span class="cycle-name">{s.name}</span>
+          </button>
+        ))}
+        <span class="cycle-loop label" aria-hidden="true">↺</span>
+      </div>
+      <div class="cycle-panels">
+        {l.stages.map((s, i) => (
+          <div class="cycle-panel" role="tabpanel" id={`cycle-panel-${i}`} aria-labelledby={`cycle-tab-${i}`} hidden={i !== 0} data-panel={i}>
+            <div class="cycle-now">
+              <span class="label">{l.nowLabel}</span>
+              <p>{s.now}</p>
+            </div>
+            <div class="cycle-learned">
+              <span class="label">{l.learnedLabel}</span>
+              <ul>
+                {s.learned.map((x) => <li><b>{x.year}</b><span>{x.text}</span></li>)}
+              </ul>
+            </div>
+          </div>
+        ))}
+        <p class="cycle-loop-text label">{l.loop}</p>
+      </div>
+    </div>
+  </div>
+</section>

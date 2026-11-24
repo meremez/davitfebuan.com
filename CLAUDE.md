@@ -25,7 +25,9 @@ Personal site for Davit Febuan (operations leader, digital payment & e-channel, 
 - Do not use AI-generated portraits of the owner (decided 2026-11-24: they read as fake and undermine credibility).
 
 ## Rules
-- Copy lives in `src/i18n/content.ts`. Use only facts from the original site; ask before adding new claims (numbers, employers, dates).
+- Copy lives in `src/i18n/content.ts`. Fact sources: the original site, the owner's CV (received 2026-11-24) and the owner's own statements. Ask before adding any other claim (numbers, employers, dates).
+- Persona (agreed 2026-11-24): the operator who keeps the machines behind digital payments running (ATM, EDC, QRIS), applying supply chain discipline to payment infrastructure. Full-circle story: Bank Mega merchant ops 2007–2011, back as E-Channel Services Head in 2024.
+- Current Bank Mega figures (`impact.now`, `approved: false`) render in the artifact and staging only, never in production, until the owner confirms the bank allows publishing. Keep them out of `public/llms.txt` too.
 - Positioning is discreet: no "open to work" / "new role" language (owner is currently employed).
 - Motion stays refined: no WebGL, custom cursors or preloaders. Respect `prefers-reduced-motion`.
 - Single light theme by brand choice. Colors only via tokens in `src/styles/global.css`.

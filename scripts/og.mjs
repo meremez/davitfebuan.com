@@ -13,8 +13,8 @@ const portrait = dataUri('src/assets/portrait-studio.jpg', 'image/jpeg');
 const logo = dataUri('src/assets/logo-df.png', 'image/png');
 
 const copy = {
-  en: { eyebrow: 'Operations Leader · Digital Payment & E-Channel', line: 'From the warehouse floor to the payment rails. 15+ years in banking, digital and supply chain operations.' },
-  id: { eyebrow: 'Operations Leader · Pembayaran Digital & E-Channel', line: 'Dari gudang ke infrastruktur pembayaran. 15+ tahun di operasional perbankan, digital, dan rantai pasok.' },
+  en: { eyebrow: 'Operations Leader · Digital Payment & E-Channel', line: 'I keep the machines behind digital payments running. Payments and supply chain operations since 2006.' },
+  id: { eyebrow: 'Operations Leader · Pembayaran Digital & E-Channel', line: 'Menjaga mesin di balik pembayaran digital tetap menyala. Di operasional pembayaran dan rantai pasok sejak 2006.' },
 };
 
 const html = (c) => `<!doctype html><html><head><meta charset="utf-8">
