@@ -26,8 +26,9 @@ Personal site for Davit Febuan (operations leader, digital payment & e-channel, 
 
 ## Rules
 - Copy lives in `src/i18n/content.ts`. Fact sources: the original site, the owner's CV (received 2026-11-24) and the owner's own statements. Ask before adding any other claim (numbers, employers, dates).
-- Persona (agreed 2026-11-24): the operator who keeps the machines behind digital payments running (ATM, EDC, QRIS), applying supply chain discipline to payment infrastructure. Full-circle story: Bank Mega merchant ops 2007–2011, back as E-Channel Services Head in 2024.
-- Current Bank Mega figures (`impact.now`, `approved: false`) render in the artifact and staging only, never in production, until the owner confirms the bank allows publishing. Keep them out of `public/llms.txt` too.
+- Persona (agreed 2026-11-24): the operator who keeps digital payment infrastructure running (ATM, EDC, QRIS), applying supply chain discipline to it. Avoid "machines behind digital payments" phrasing; say infrastructure, or name ATM/EDC directly. Full-circle story: Bank Mega merchant ops 2007–2011, back as E-Channel Services Head in 2024.
+- Current Bank Mega figures: only the >99.8% monthly availability is public. Never publish ATM, EDC, QRIS or vendor counts (owner, 2026-11-24).
+- CT Corp Digital: describe the businesses by type (retail & grocery delivery, digital bank, beauty platform), not by brand name, on the public site.
 - Positioning is discreet: no "open to work" / "new role" language (owner is currently employed).
 - Motion stays refined: no WebGL, custom cursors or preloaders. Respect `prefers-reduced-motion`.
 - Single light theme by brand choice. Colors only via tokens in `src/styles/global.css`.

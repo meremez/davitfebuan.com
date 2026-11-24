@@ -464,7 +464,6 @@ body::before {
 .impact-featured { display: grid; gap: 8px; padding: 18px 0 22px; border-top: 1px solid var(--on-dark-line); }
 .impact-featured strong { font-family: var(--font-display); font-weight: 400; font-size: clamp(3rem, 6vw, 4.8rem); line-height: 1; letter-spacing: -0.03em; color: var(--peach); font-variant-numeric: lining-nums; }
 .impact-featured span { color: var(--on-dark-2); }
-.impact-now .impact-list { margin-top: 0; }
 .receipt .item span em { font-style: normal; font-weight: 500; color: #26221d; }
 
 /* ---------- Credentials ---------- */

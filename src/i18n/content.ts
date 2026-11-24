@@ -2,8 +2,8 @@
 // Fact sources: the original davitfebuan.com, the owner's CV (received 2026-11-24) and the owner's own
 // statements in the build conversation. Ask before adding any other claim (numbers, employers, dates).
 //
-// Current-role figures (impact.now) are gated: `approved: false` hides them in production builds until the
-// owner confirms Bank Mega allows publishing them. They still show in the private artifact and staging.
+// Of the current Bank Mega figures, only the >99.8% monthly availability is public (owner, 2026-11-24).
+// Do not add ATM, EDC, QRIS or vendor counts.
 
 export type Lang = 'en' | 'id';
 
@@ -45,7 +45,7 @@ export const content = {
     meta: {
       title: 'Davit Febuan, Operations Leader in Digital Payment & E-Channel',
       description:
-        'Davit Febuan keeps the machines behind digital payments running at Bank Mega: ATM, EDC and QRIS. In payments and supply chain operations since 2006.',
+        'Davit Febuan keeps digital payment infrastructure running at Bank Mega: ATM, EDC and QRIS. In payments and supply chain operations since 2006.',
     },
     nav: { story: 'Story', lifecycle: 'Lifecycle', journey: 'Journey', expertise: 'Expertise', impact: 'Impact', contact: 'Contact', menu: 'Menu', close: 'Close', switchTo: 'Bahasa Indonesia' },
     a11y: {
@@ -61,7 +61,7 @@ export const content = {
     hero: {
       eyebrow: 'Operations Leader · Digital Payment & E-Channel',
       statement:
-        'I keep the machines behind digital payments running: ATMs, EDC terminals and QRIS merchants, from installation to retrieval.',
+        'I keep digital payment infrastructure running: ATMs, EDC terminals and QRIS merchants, from installation to retrieval.',
       facts: [
         { k: 'Based in', v: 'Jakarta, Indonesia' },
         { k: 'Now', v: 'E-Channel Services Head, Bank Mega' },
@@ -87,7 +87,7 @@ export const content = {
     },
     lifecycle: {
       label: 'Lifecycle',
-      heading: 'The life of a payment machine, and where I learned each stage',
+      heading: 'The lifecycle of payment infrastructure, and where I learned each stage',
       intro: 'Every ATM, EDC terminal and QRIS merchant goes through the same five stages. Select one.',
       nowLabel: 'Today at Bank Mega',
       learnedLabel: 'Where I learned it',
@@ -95,13 +95,13 @@ export const content = {
       stages: [
         { key: 'install', name: 'Install', now: 'Placing ATMs, installing EDC terminals at merchants and onboarding new QRIS merchants.',
           learned: [{ year: '2007', text: 'Installed EDC terminals for Bank Mega merchants' }, { year: '2011', text: 'Delivered and installed equipment at tower sites across Indonesia, including remote areas' }] },
-        { key: 'monitor', name: 'Monitor', now: 'Tracking each machine’s availability against monthly targets and vendor SLAs.',
+        { key: 'monitor', name: 'Monitor', now: 'Tracking the availability of every ATM and EDC terminal against vendor SLAs, held above 99.8% every month.',
           learned: [{ year: '2016', text: 'Set the KPIs and SLAs for logistics performance' }, { year: '2019', text: 'Built Power BI dashboards for distribution performance' }] },
         { key: 'maintain', name: 'Maintain', now: 'Coordinating repairs and preventive maintenance with vendors under SLA, and handling QRIS maintenance requests.',
           learned: [{ year: '2007', text: 'Maintained EDC terminals and resolved disputes and chargebacks' }, { year: '2016', text: 'Wrote the SOPs for after-sales parts service, aligned with ISO 9001' }] },
-        { key: 'resupply', name: 'Resupply', now: 'Keeping machines stocked with what they consume: paper rolls, stickers, UPS units and cash cassettes.',
+        { key: 'resupply', name: 'Resupply', now: 'Keeping ATMs and EDC terminals stocked with what they use: paper rolls, stickers, UPS units and cash cassettes.',
           learned: [{ year: '2013', text: 'Ran S&OP and demand planning, keeping inventory within 1% of schedule' }, { year: '2016', text: 'Managed sourcing and purchasing on a $3M+ annual budget' }] },
-        { key: 'retrieve', name: 'Retrieve', now: 'Pulling machines back from the field and closing QRIS merchant accounts.',
+        { key: 'retrieve', name: 'Retrieve', now: 'Pulling ATMs and EDC terminals back from the field and closing QRIS merchant accounts.',
           learned: [{ year: '2019', text: 'Coordinated 3PL and courier partners nationwide' }, { year: '2020', text: 'Set up reverse logistics, returns and refunds for new digital businesses' }] },
       ] as Stage[],
     },
@@ -116,7 +116,7 @@ export const content = {
         { date: '2013 – 2016', short: '2013', role: 'PPIC Supervisor', company: 'PT Graha Sumber Prima Elektronik', body: 'Led monthly S&OP and weekly demand planning, kept inventory within 1% of production schedules, and applied Lean and Six Sigma.', chapter: 'supply' },
         { date: '2016 – 2019', short: '2016', role: 'Logistics Manager', company: 'PT Graha Sumber Prima Elektronik', body: 'Ran manufacturing operations, sourcing and logistics on a $3M+ annual budget. Saved $100K in the first year and cut costs by 5%+ every year after.', chapter: 'supply' },
         { date: '2019 – 2020', short: '2019', role: 'Distribution Manager', company: 'Bhinneka.com', body: 'Ran sourcing, warehousing and delivery for B2G, B2B and e-commerce customers nationwide, routing 200+ deliveries a day and tracking them in Power BI.', chapter: 'supply' },
-        { date: '2020 – 2024', short: '2020', role: 'Head of Operations', company: 'CT Corp Digital', body: 'Set up operations for new digital businesses in the CT Corp ecosystem, including Transmart, Allo Bank, Grab grocery and Female Daily: order-to-delivery flow, reverse logistics, CRM and customer service. Stayed on through launch, then handed each one over.', chapter: 'digital' },
+        { date: '2020 – 2024', short: '2020', role: 'Head of Operations', company: 'CT Corp Digital', body: 'Set up operations for new digital businesses across the CT Corp ecosystem, from retail and grocery delivery to a digital bank and a beauty platform: order-to-delivery flow, reverse logistics, CRM and customer service. Stayed on through launch, then handed each one over.', chapter: 'digital' },
         { date: '2024 – Present', short: '2024', role: 'E-Channel Services Head', company: 'Bank Mega', body: 'Back at Bank Mega to lead ATM, EDC, QRIS and payment gateway services: strategy, vendor agreements, the maintenance budget, policies and the team.', chapter: 'payments' },
       ] as Stop[],
       more: 'Full history on LinkedIn',
@@ -134,25 +134,11 @@ export const content = {
     impact: {
       label: 'Impact',
       heading: 'Results, printed plainly',
-      note: 'Today’s numbers from Bank Mega, and the record from every role before it on the receipt.',
-      noteGated: 'Selected results from every role since 2007. The receipt carries the year each one came from.',
+      note: 'Availability today at Bank Mega, and the record from every role before it on the receipt.',
       now: {
-        approved: false,
         label: 'Today at Bank Mega',
-        featured: { value: '>99.8%', label: 'Machine availability, every month' } as Metric,
-        metrics: [
-          { value: '±500', label: 'ATMs managed' },
-          { value: '±2,000', label: 'EDC terminals managed' },
-          { value: '±2,000', label: 'New QRIS merchants a month' },
-          { value: '±10', label: 'Active vendors' },
-        ] as Metric[],
+        featured: { value: '>99.8%', label: 'Availability, held every month across the e-channel network' } as Metric,
       },
-      highlights: [
-        { value: '800', label: 'EDC terminals rolled out in year one (2007)' },
-        { value: '99%', label: 'On-time delivery to tower sites (2011–13)' },
-        { value: '$100K', label: 'Logistics savings in year one (2016)' },
-        { value: '5%+', label: 'Annual cost reduction (2017–19)' },
-      ] as Metric[],
       receipt: {
         merchant: 'DAVIT FEBUAN',
         sub: 'OPERATIONS · SINCE 2006',
@@ -196,7 +182,7 @@ export const content = {
     meta: {
       title: 'Davit Febuan · Pembayaran Digital & E-Channel',
       description:
-        'Davit Febuan menjaga mesin di balik pembayaran digital Bank Mega tetap berjalan: ATM, EDC, dan QRIS. Di operasional pembayaran dan rantai pasok sejak 2006.',
+        'Davit Febuan menjaga infrastruktur pembayaran digital Bank Mega tetap berjalan: ATM, EDC, dan QRIS. Di operasional pembayaran dan rantai pasok sejak 2006.',
     },
     nav: { story: 'Tentang', lifecycle: 'Siklus', journey: 'Karier', expertise: 'Keahlian', impact: 'Pencapaian', contact: 'Kontak', menu: 'Menu', close: 'Tutup', switchTo: 'English' },
     a11y: {
@@ -212,7 +198,7 @@ export const content = {
     hero: {
       eyebrow: 'Operations Leader · Pembayaran Digital & E-Channel',
       statement:
-        'Saya memastikan mesin di balik pembayaran digital tetap menyala: ATM, terminal EDC, dan merchant QRIS, dari pemasangan sampai penarikan.',
+        'Saya menjaga infrastruktur pembayaran digital tetap berjalan: ATM, terminal EDC, dan merchant QRIS, dari pemasangan hingga penarikan.',
       facts: [
         { k: 'Domisili', v: 'Jakarta, Indonesia' },
         { k: 'Posisi saat ini', v: 'E-Channel Services Head, Bank Mega' },
@@ -238,7 +224,7 @@ export const content = {
     },
     lifecycle: {
       label: 'Siklus',
-      heading: 'Siklus hidup mesin pembayaran, dan di mana saya mempelajari setiap tahapnya',
+      heading: 'Siklus hidup infrastruktur pembayaran, dan di mana saya mempelajari setiap tahapnya',
       intro: 'Setiap ATM, terminal EDC, dan merchant QRIS melewati lima tahap yang sama. Pilih salah satu.',
       nowLabel: 'Sekarang di Bank Mega',
       learnedLabel: 'Tempat saya mempelajarinya',
@@ -246,13 +232,13 @@ export const content = {
       stages: [
         { key: 'install', name: 'Pasang', now: 'Menempatkan ATM, memasang terminal EDC di merchant, dan mendaftarkan merchant QRIS baru.',
           learned: [{ year: '2007', text: 'Memasang terminal EDC untuk merchant Bank Mega' }, { year: '2011', text: 'Mengirim dan memasang perangkat di lokasi tower di seluruh Indonesia, termasuk daerah terpencil' }] },
-        { key: 'monitor', name: 'Pantau', now: 'Memantau availability setiap mesin terhadap target bulanan dan SLA vendor.',
+        { key: 'monitor', name: 'Pantau', now: 'Memantau availability setiap ATM dan EDC terhadap SLA vendor, terjaga di atas 99,8% setiap bulan.',
           learned: [{ year: '2016', text: 'Menyusun KPI dan SLA untuk kinerja logistik' }, { year: '2019', text: 'Membangun dashboard Power BI untuk kinerja distribusi' }] },
         { key: 'maintain', name: 'Rawat', now: 'Mengoordinasikan perbaikan dan perawatan berkala bersama vendor sesuai SLA, serta menangani permintaan maintenance QRIS.',
           learned: [{ year: '2007', text: 'Merawat terminal EDC serta menyelesaikan sengketa dan chargeback' }, { year: '2016', text: 'Menyusun SOP layanan suku cadang purnajual sesuai ISO 9001' }] },
-        { key: 'resupply', name: 'Suplai', now: 'Menjaga pasokan kebutuhan mesin: kertas, stiker, UPS, dan kaset uang.',
+        { key: 'resupply', name: 'Suplai', now: 'Menjaga pasokan kebutuhan ATM dan EDC: kertas, stiker, UPS, dan kaset uang.',
           learned: [{ year: '2013', text: 'Menjalankan S&OP dan perencanaan permintaan, dengan selisih persediaan di bawah 1%' }, { year: '2016', text: 'Mengelola sourcing dan pembelian dengan anggaran lebih dari US$3 juta per tahun' }] },
-        { key: 'retrieve', name: 'Tarik', now: 'Menarik mesin dari lapangan dan menutup akun merchant QRIS.',
+        { key: 'retrieve', name: 'Tarik', now: 'Menarik ATM dan EDC dari lapangan dan menutup akun merchant QRIS.',
           learned: [{ year: '2019', text: 'Mengoordinasikan mitra 3PL dan kurir di seluruh Indonesia' }, { year: '2020', text: 'Menyiapkan reverse logistics, retur, dan refund untuk bisnis digital baru' }] },
       ] as Stage[],
     },
@@ -267,7 +253,7 @@ export const content = {
         { date: '2013 – 2016', short: '2013', role: 'PPIC Supervisor', company: 'PT Graha Sumber Prima Elektronik', body: 'Memimpin S&OP bulanan dan perencanaan permintaan mingguan, menjaga selisih persediaan di bawah 1% dari jadwal produksi, dan menerapkan Lean serta Six Sigma.', chapter: 'supply' },
         { date: '2016 – 2019', short: '2016', role: 'Logistics Manager', company: 'PT Graha Sumber Prima Elektronik', body: 'Menjalankan operasional pabrik, sourcing, dan logistik dengan anggaran lebih dari US$3 juta per tahun. Menghemat US$100 ribu di tahun pertama dan menurunkan biaya lebih dari 5% setiap tahun setelahnya.', chapter: 'supply' },
         { date: '2019 – 2020', short: '2019', role: 'Distribution Manager', company: 'Bhinneka.com', body: 'Menjalankan sourcing, pergudangan, dan pengiriman untuk pelanggan B2G, B2B, dan e-commerce di seluruh Indonesia, mengatur rute 200+ pengiriman per hari dan memantaunya di Power BI.', chapter: 'supply' },
-        { date: '2020 – 2024', short: '2020', role: 'Head of Operations', company: 'CT Corp Digital', body: 'Menyiapkan operasional bisnis-bisnis digital baru di ekosistem CT Corp, antara lain Transmart, Allo Bank, Grab grocery, dan Female Daily: alur pesanan sampai pengiriman, reverse logistics, CRM, dan customer service. Mendampingi sampai berjalan, lalu menyerahterimakan sepenuhnya.', chapter: 'digital' },
+        { date: '2020 – 2024', short: '2020', role: 'Head of Operations', company: 'CT Corp Digital', body: 'Menyiapkan operasional bisnis-bisnis digital baru di ekosistem CT Corp, mulai dari ritel dan grocery delivery hingga bank digital dan platform kecantikan: alur pesanan sampai pengiriman, reverse logistics, CRM, dan customer service. Mendampingi sampai berjalan, lalu menyerahterimakan sepenuhnya.', chapter: 'digital' },
         { date: '2024 – Sekarang', short: '2024', role: 'E-Channel Services Head', company: 'Bank Mega', body: 'Kembali ke Bank Mega untuk memimpin layanan ATM, EDC, QRIS, dan payment gateway: strategi, kontrak vendor, anggaran pemeliharaan, kebijakan, dan tim.', chapter: 'payments' },
       ] as Stop[],
       more: 'Riwayat lengkap di LinkedIn',
@@ -285,25 +271,11 @@ export const content = {
     impact: {
       label: 'Pencapaian',
       heading: 'Hasil kerja, dicetak apa adanya',
-      note: 'Angka terkini dari Bank Mega, dan rekam jejak dari setiap jabatan sebelumnya di struk.',
-      noteGated: 'Sebagian hasil dari setiap jabatan sejak 2007. Struk mencantumkan tahun asal setiap angka.',
+      note: 'Availability saat ini di Bank Mega, dan rekam jejak dari setiap jabatan sebelumnya di struk.',
       now: {
-        approved: false,
         label: 'Sekarang di Bank Mega',
-        featured: { value: '>99,8%', label: 'Availability mesin, setiap bulan' } as Metric,
-        metrics: [
-          { value: '±500', label: 'ATM dikelola' },
-          { value: '±2.000', label: 'Terminal EDC dikelola' },
-          { value: '±2.000', label: 'Merchant QRIS baru per bulan' },
-          { value: '±10', label: 'Vendor aktif' },
-        ] as Metric[],
+        featured: { value: '>99,8%', label: 'Availability, terjaga setiap bulan di seluruh jaringan e-channel' } as Metric,
       },
-      highlights: [
-        { value: '800', label: 'Terminal EDC terpasang di tahun pertama (2007)' },
-        { value: '99%', label: 'Pengiriman tepat waktu ke lokasi tower (2011–13)' },
-        { value: '$100K', label: 'Penghematan logistik di tahun pertama (2016)' },
-        { value: '5%+', label: 'Penurunan biaya per tahun (2017–19)' },
-      ] as Metric[],
       receipt: {
         merchant: 'DAVIT FEBUAN',
         sub: 'OPERASIONAL · SEJAK 2006',

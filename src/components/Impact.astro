@@ -4,9 +4,6 @@ interface Props { t: Content; lang: Lang }
 const { t, lang } = Astro.props;
 const r = t.impact.receipt;
 const now = t.impact.now;
-// Current-role figures stay out of production until the owner confirms the bank allows publishing them.
-const target = process.env.DEPLOY_TARGET ?? 'production';
-const showNow = now.approved || target !== 'production';
 const fmt = (s: (typeof t.impact.stats)[number]) => `${s.prefix ?? ''}${s.value}${s.suffix ?? ''}`;
 const today = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'id-ID', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Jakarta' }).format(new Date());
 ---
@@ -15,20 +12,11 @@ const today = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'id-ID', { day: 
     <div class="impact-copy">
       <span class="label">{t.impact.label}</span>
       <h2 id="impact-heading" data-split>{t.impact.heading}</h2>
-      <p data-fade>{showNow ? t.impact.note : t.impact.noteGated}</p>
-      {showNow ? (
-        <div class="impact-now" data-fade>
-          <span class="label">{now.label}</span>
-          <div class="impact-featured"><strong>{now.featured.value}</strong><span>{now.featured.label}</span></div>
-          <div class="impact-list">
-            {now.metrics.map((m) => <div><strong>{m.value}</strong><span>{m.label}</span></div>)}
-          </div>
-        </div>
-      ) : (
-        <div class="impact-list" data-fade>
-          {t.impact.highlights.map((m) => <div><strong>{m.value}</strong><span>{m.label}</span></div>)}
-        </div>
-      )}
+      <p data-fade>{t.impact.note}</p>
+      <div class="impact-now" data-fade>
+        <span class="label">{now.label}</span>
+        <div class="impact-featured"><strong>{now.featured.value}</strong><span>{now.featured.label}</span></div>
+      </div>
     </div>
     <div class="terminal" data-terminal>
       <div class="paper-clip">

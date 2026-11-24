@@ -1,15 +1,15 @@
 # Davit Febuan
 
-> Operations leader in Jakarta, Indonesia. E-Channel Services Head at Bank Mega, responsible for the ATM, EDC, QRIS and payment gateway services: installation, monitoring, maintenance, resupply and retrieval of payment machines, vendor agreements and the maintenance budget. In payments and supply chain operations since 2006.
+> Operations leader in Jakarta, Indonesia. E-Channel Services Head at Bank Mega, responsible for the ATM, EDC, QRIS and payment gateway services: installation, monitoring, maintenance, resupply and retrieval, vendor agreements and the maintenance budget. Availability held above 99.8% every month. In payments and supply chain operations since 2006.
 
 ## Profile
-- [English profile](https://davitfebuan.com/): story, payment-machine lifecycle, career, expertise, results and contact
+- [English profile](https://davitfebuan.com/): story, payment-infrastructure lifecycle, career, expertise, results and contact
 - [Profil Bahasa Indonesia](https://davitfebuan.com/id/): versi Bahasa Indonesia
 - [LinkedIn](https://www.linkedin.com/in/davit-febuan): full work history
 
 ## Career
 - 2024 – present: E-Channel Services Head, Bank Mega. Strategy and operations for ATM, EDC, QRIS and payment gateway services; vendor agreements, maintenance OPEX, policies and the team.
-- 2020 – 2024: Head of Operations, CT Corp Digital. Set up operations for new digital businesses in the CT Corp ecosystem (including Transmart, Allo Bank, Grab grocery and Female Daily): order-to-delivery flow, reverse logistics, CRM and customer service, then handed them over.
+- 2020 – 2024: Head of Operations, CT Corp Digital. Set up operations for new digital businesses across the CT Corp ecosystem (retail and grocery delivery, a digital bank, a beauty platform): order-to-delivery flow, reverse logistics, CRM and customer service, then handed them over.
 - 2019 – 2020: Distribution Manager, Bhinneka.com. Sourcing, warehousing and delivery for B2G, B2B and e-commerce; routing for 200+ deliveries a day; Power BI KPI dashboards.
 - 2016 – 2019: Logistics Manager, PT Graha Sumber Prima Elektronik. Manufacturing operations, sourcing and logistics on a $3M+ annual budget; $100K first-year savings and 5%+ annual cost reduction after.
 - 2013 – 2016: PPIC Supervisor, PT Graha Sumber Prima Elektronik. S&OP and demand planning; inventory within 1% of production schedules.
