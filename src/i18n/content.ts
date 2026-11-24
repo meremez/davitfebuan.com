@@ -168,7 +168,7 @@ export const content = {
       items: [
         { name: 'SPPUR Level 5 · Payment Services', meta: 'Praveena Banking Competency Center, 2025' },
         { name: 'Payment Transaction Processing Training, Level 5', meta: 'Praveena Banking Competency Center, 2025' },
-        { name: 'Six Sigma Black Belt', meta: 'Coursera, 2024' },
+        { name: 'Six Sigma Black Belt', meta: 'Coursera, 2023' },
         { name: 'Lean Production System', meta: 'YDBA, 2016' },
         { name: 'ISO 45001:2018 Occupational Health & Safety Management Systems', meta: 'Sintegral, 2019' },
         { name: 'ISO 9001:2008 Internal Auditor', meta: 'Sintegral, 2012' },
@@ -319,7 +319,7 @@ export const content = {
       items: [
         { name: 'SPPUR Jenjang 5 · Layanan Pembayaran', meta: 'Praveena Banking Competency Center, 2025' },
         { name: 'Pelatihan Payment Transaction Processing, Jenjang 5', meta: 'Praveena Banking Competency Center, 2025' },
-        { name: 'Six Sigma Black Belt', meta: 'Coursera, 2024' },
+        { name: 'Six Sigma Black Belt', meta: 'Coursera, 2023' },
         { name: 'Lean Production System', meta: 'YDBA, 2016' },
         { name: 'ISO 45001:2018 Sistem Manajemen K3', meta: 'Sintegral, 2019' },
         { name: 'ISO 9001:2008 Internal Auditor', meta: 'Sintegral, 2012' },
