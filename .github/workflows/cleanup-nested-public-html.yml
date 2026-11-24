@@ -1,0 +1,31 @@
+# One-off: remove the copy that the first production deploy put in public_html/public_html.
+# Runs only from the ops/cleanup-nested-public-html branch, which is deleted afterwards.
+#
+# How it stays safe: FTP-Deploy-Action syncs an EMPTY local folder against server-dir
+# public_html/ (relative to the deploy account's root, which is the site's document root).
+# It deletes only files and folders listed in that folder's own sync-state file, i.e. the
+# files it uploaded there on 2026-11-15. The live site (state file at the account root) is
+# not part of that list, and if the state file is missing nothing is deleted.
+name: One-off cleanup of nested public_html
+
+on:
+  push:
+    branches: [ops/cleanup-nested-public-html]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare an empty local folder
+        run: mkdir -p empty
+
+      - name: Delete the nested copy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          port: ${{ vars.FTP_PORT || 21 }}
+          local-dir: ./empty/
+          server-dir: public_html/
