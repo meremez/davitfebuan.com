@@ -37,9 +37,18 @@ export const content = {
     meta: {
       title: 'Davit Febuan, Operations Leader in Digital Payment & E-Channel',
       description:
-        'Davit Febuan leads digital payment and e-channel operations in Indonesia (EDC, QRIS, payment gateway and ATM) with 15+ years across banking, digital and supply chain operations.',
+        'Davit Febuan leads digital payment and e-channel operations in Indonesia: EDC, QRIS, payment gateway and ATM. 15+ years in banking, digital and supply chain.',
     },
     nav: { story: 'Story', journey: 'Journey', expertise: 'Expertise', impact: 'Impact', contact: 'Contact', menu: 'Menu', close: 'Close', switchTo: 'Bahasa Indonesia' },
+    a11y: {
+      skip: 'Skip to content',
+      sections: 'Sections',
+      language: 'Language',
+      home: 'Davit Febuan, back to start',
+      top: 'Davit Febuan, back to top',
+      portraitAlt: 'Portrait of Davit Febuan',
+      contactPortraitAlt: 'Davit Febuan wearing batik',
+    },
     hero: {
       eyebrow: 'Operations Leader · Digital Payment & E-Channel',
       statement:
@@ -81,7 +90,7 @@ export const content = {
     },
     expertise: {
       label: 'Expertise',
-      heading: 'Three disciplines, one operating habit',
+      heading: 'What I’ve built my career on',
       hint: 'Select a discipline',
       groups: [
         { title: 'Digital Payment & E-Channel', items: ['EDC Operations', 'QRIS & Payment Gateway', 'ATM Network Management', 'Vendor & Regulatory Compliance'] },
@@ -118,6 +127,7 @@ export const content = {
       label: 'Contact',
       heading: 'Let’s talk.',
       note: 'Whether it’s about payments, operations, or a possible collaboration, I’m happy to connect.',
+      card: { role: 'Operations Leader · Jakarta' },
       form: {
         name: 'Name', email: 'Your email', message: 'Message', submit: 'Send message', sending: 'Sending…',
         success: 'Thanks, your message has been sent. I’ll get back to you soon.',
@@ -126,7 +136,7 @@ export const content = {
       },
       alt: 'Prefer LinkedIn?',
     },
-    footer: { rights: 'Jakarta, Indonesia.', top: 'Back to top', local: 'Local time in Jakarta' },
+    footer: { rights: 'Jakarta, Indonesia.', top: 'Back to top' },
   },
 
   id: {
@@ -134,64 +144,73 @@ export const content = {
     htmlLang: 'id',
     locale: 'id_ID',
     meta: {
-      title: 'Davit Febuan, Pemimpin Operasional Pembayaran Digital & E-Channel',
+      title: 'Davit Febuan · Pembayaran Digital & E-Channel',
       description:
-        'Davit Febuan memimpin operasional pembayaran digital dan e-channel di Indonesia (EDC, QRIS, payment gateway, dan ATM) dengan pengalaman 15+ tahun di perbankan, digital, dan rantai pasok.',
+        'Davit Febuan memimpin operasional pembayaran digital dan e-channel: EDC, QRIS, payment gateway, dan ATM. 15+ tahun di perbankan, digital, dan rantai pasok.',
     },
-    nav: { story: 'Cerita', journey: 'Perjalanan', expertise: 'Keahlian', impact: 'Dampak', contact: 'Kontak', menu: 'Menu', close: 'Tutup', switchTo: 'English' },
+    nav: { story: 'Tentang', journey: 'Karier', expertise: 'Keahlian', impact: 'Pencapaian', contact: 'Kontak', menu: 'Menu', close: 'Tutup', switchTo: 'English' },
+    a11y: {
+      skip: 'Langsung ke konten',
+      sections: 'Navigasi bagian',
+      language: 'Bahasa',
+      home: 'Davit Febuan, ke awal halaman',
+      top: 'Davit Febuan, kembali ke atas',
+      portraitAlt: 'Foto Davit Febuan',
+      contactPortraitAlt: 'Foto Davit Febuan mengenakan batik',
+    },
     hero: {
-      eyebrow: 'Pemimpin Operasional · Pembayaran Digital & E-Channel',
+      eyebrow: 'Operations Leader · Pembayaran Digital & E-Channel',
       statement:
-        'Lima belas tahun membangun operasional yang tetap andal dalam skala besar. Dimulai dari lantai gudang, kini di kanal pembayaran sebuah bank nasional.',
+        'Lima belas tahun membangun operasi yang tetap andal saat skalanya terus membesar. Berawal dari gudang, kini di kanal pembayaran sebuah bank nasional.',
       facts: [
-        { k: 'Berbasis di', v: 'Jakarta, Indonesia' },
-        { k: 'Saat ini', v: 'E-Channel Services Head, Bank Mega' },
+        { k: 'Domisili', v: 'Jakarta, Indonesia' },
+        { k: 'Posisi saat ini', v: 'E-Channel Services Head, Bank Mega' },
         { k: 'Fokus', v: 'EDC · QRIS · Payment gateway · ATM' },
         { k: 'Pengalaman', v: '15+ tahun' },
       ],
-      cta: 'Mulai percakapan',
-      scroll: 'Baca ceritanya',
+      cta: 'Hubungi saya',
+      scroll: 'Kenali lebih dekat',
     },
     story: {
-      label: 'Cerita',
+      label: 'Tentang',
       lead:
-        'Lima belas tahun lalu saya memulai karier di lantai gudang, mengoordinasikan pengiriman ke lokasi tower terpencil di seluruh Indonesia. Hari ini saya memimpin strategi kanal digital untuk salah satu bank terbesar di Indonesia: jaringan EDC, QRIS, payment gateway, dan layanan ATM.',
+        'Lima belas tahun lalu saya memulai karier dari gudang, mengatur pengiriman ke lokasi-lokasi tower terpencil di berbagai penjuru Indonesia. Kini saya memimpin strategi kanal digital di salah satu bank besar di Indonesia: jaringan EDC, QRIS, payment gateway, dan layanan ATM.',
       p2:
-        'Yang menghubungkan dua babak karier itu adalah kemampuan yang sama: membangun operasional yang berjalan andal dalam skala besar, di bawah tekanan anggaran dan kepatuhan yang nyata. Saya pernah menjalankan S&OP untuk pabrik manufaktur, mengelola anggaran logistik tahunan lebih dari $3 juta, meluncurkan 800 perangkat EDC dalam satu tahun, dan kini memimpin strategi kanal digital untuk bank nasional.',
+        'Dua babak itu disatukan oleh kemampuan yang sama: membangun operasi yang tetap andal dalam skala besar, di tengah tuntutan anggaran dan kepatuhan yang nyata. Saya pernah menjalankan S&OP sebuah pabrik, mengelola anggaran logistik lebih dari US$3 juta per tahun, meluncurkan 800 mesin EDC dalam setahun, dan kini memimpin strategi kanal digital sebuah bank nasional.',
       p3:
-        'Saya sudah menjalani kedua sisi, operasional fisik dan infrastruktur digital, di level kepala departemen. Kombinasi itu yang saya bawa ke setiap operasional yang saya pimpin.',
+        'Saya sudah menangani kedua sisi, operasi lapangan dan infrastruktur digital, setingkat kepala departemen. Perpaduan itulah yang saya bawa ke setiap operasi yang saya pimpin.',
       chapters: [
-        { tag: 'Babak satu', title: 'Operasional fisik', items: 'Pergudangan · Manufaktur · Distribusi' },
-        { tag: 'Babak dua', title: 'Infrastruktur digital', items: 'EDC · QRIS · Payment gateway · ATM' },
+        { tag: 'Babak pertama', title: 'Operasi lapangan', items: 'Pergudangan · Manufaktur · Distribusi' },
+        { tag: 'Babak kedua', title: 'Infrastruktur digital', items: 'EDC · QRIS · Payment gateway · ATM' },
       ],
     },
     journey: {
-      label: 'Perjalanan',
-      heading: 'Dari lantai gudang ke jalur pembayaran',
-      chapterNames: { physical: 'Operasional fisik', digital: 'Infrastruktur digital' },
+      label: 'Karier',
+      heading: 'Dari gudang ke infrastruktur pembayaran',
+      chapterNames: { physical: 'Operasi lapangan', digital: 'Infrastruktur digital' },
       stops: [
-        { date: 'Awal karier', short: 'Awal', role: 'Titik awal', body: 'Mengoordinasikan pengiriman ke lokasi tower terpencil di seluruh Indonesia dari lantai gudang.', chapter: 'physical' },
-        { date: '2016 – 2019', short: '2016', role: 'Logistics Manager', company: 'PT Graha Sumber Prima Elektronik', body: 'Mengelola operasional manufaktur dan anggaran logistik tahunan lebih dari $3 juta; menghasilkan penghematan $100 ribu di tahun pertama.', chapter: 'physical' },
-        { date: '2019 – 2020', short: '2019', role: 'Distribution Manager', company: 'Bhinneka.com', body: 'Menjalankan distribusi nasional untuk kanal B2G, B2B, dan e-commerce; membangun sistem KPI dengan Power BI.', chapter: 'physical' },
-        { date: '2020 – 2024', short: '2020', role: 'Head of Operations', company: 'CT Corp Digital', body: 'Mengarahkan pengembangan produk digital dari konsep hingga peluncuran di seluruh Unit Bisnis.', chapter: 'digital' },
-        { date: '2024 – Sekarang', short: '2024', role: 'E-Channel Services Head', company: 'Bank Mega', body: 'Memimpin strategi EDC, QRIS, payment gateway, dan layanan ATM di seluruh jaringan e-channel bank.', chapter: 'digital' },
+        { date: 'Awal karier', short: 'Awal', role: 'Titik awal', body: 'Mengatur pengiriman dari gudang ke lokasi-lokasi tower terpencil di berbagai penjuru Indonesia.', chapter: 'physical' },
+        { date: '2016 – 2019', short: '2016', role: 'Logistics Manager', company: 'PT Graha Sumber Prima Elektronik', body: 'Mengelola operasional pabrik dan anggaran logistik lebih dari US$3 juta per tahun. Menghasilkan penghematan US$100 ribu di tahun pertama.', chapter: 'physical' },
+        { date: '2019 – 2020', short: '2019', role: 'Distribution Manager', company: 'Bhinneka.com', body: 'Memimpin distribusi nasional untuk kanal B2G, B2B, dan e-commerce, serta membangun sistem KPI di Power BI.', chapter: 'physical' },
+        { date: '2020 – 2024', short: '2020', role: 'Head of Operations', company: 'CT Corp Digital', body: 'Memimpin pengembangan produk digital, dari konsep hingga peluncuran, untuk seluruh unit bisnis.', chapter: 'digital' },
+        { date: '2024 – Sekarang', short: '2024', role: 'E-Channel Services Head', company: 'Bank Mega', body: 'Memimpin strategi layanan EDC, QRIS, payment gateway, dan ATM di seluruh jaringan e-channel bank.', chapter: 'digital' },
       ] as Stop[],
       more: 'Riwayat lengkap di LinkedIn',
     },
     expertise: {
       label: 'Keahlian',
-      heading: 'Tiga disiplin, satu kebiasaan kerja',
-      hint: 'Pilih disiplin',
+      heading: 'Fondasi karier saya',
+      hint: 'Pilih bidang',
       groups: [
-        { title: 'Pembayaran Digital & E-Channel', items: ['Operasional EDC', 'QRIS & Payment Gateway', 'Manajemen Jaringan ATM', 'Kepatuhan Vendor & Regulasi'] },
-        { title: 'Rantai Pasok & Logistik', items: ['Perencanaan S&OP & Demand', 'Kontrol Inventori', 'Manajemen Distribusi & 3PL', 'Lean & Six Sigma'] },
-        { title: 'Kepemimpinan & Strategi', items: ['Kepemimpinan Tim Lintas Fungsi', 'Penganggaran & P&L', 'Perancangan Proses (SOP)', 'Manajemen Pemangku Kepentingan'] },
+        { title: 'Pembayaran Digital & E-Channel', items: ['Operasional EDC', 'QRIS & Payment Gateway', 'Pengelolaan Jaringan ATM', 'Kepatuhan Vendor & Regulasi'] },
+        { title: 'Rantai Pasok & Logistik', items: ['S&OP dan Perencanaan Permintaan', 'Pengendalian Persediaan', 'Distribusi & Pengelolaan 3PL', 'Lean & Six Sigma'] },
+        { title: 'Kepemimpinan & Strategi', items: ['Memimpin Tim Lintas Fungsi', 'Penganggaran & P&L', 'Penyusunan Proses & SOP', 'Pengelolaan Stakeholder'] },
       ],
     },
     impact: {
-      label: 'Dampak',
-      heading: 'Hasil, tercetak apa adanya',
-      note: 'Hasil pilihan dari peran di perbankan, digital, dan rantai pasok. Setiap angka berasal dari peran yang ada di halaman ini.',
+      label: 'Pencapaian',
+      heading: 'Hasil kerja, dicetak apa adanya',
+      note: 'Sebagian hasil dari peran saya di perbankan, digital, dan rantai pasok. Semua angka berasal dari jabatan yang tercantum di halaman ini.',
       receipt: {
         merchant: 'DAVIT FEBUAN',
         sub: 'OPERASIONAL · JAKARTA',
@@ -201,31 +220,32 @@ export const content = {
         thanks: 'TERIMA KASIH',
       },
       stats: [
-        { value: 15, suffix: '+', label: 'Tahun kepemimpinan operasional' },
-        { value: 800, label: 'Perangkat EDC terpasang, tahun pertama' },
-        { prefix: '$', value: 100, suffix: 'K+', label: 'Penghematan biaya logistik, tahun pertama' },
-        { value: 99, suffix: '%', label: 'Tingkat pengiriman tepat waktu' },
-        { value: 1, suffix: '%', label: 'Deviasi inventori dari jadwal' },
-        { value: 5, suffix: '%+', label: 'Efisiensi biaya tahunan berkelanjutan' },
+        { value: 15, suffix: '+', label: 'Tahun memimpin operasional' },
+        { value: 800, label: 'Mesin EDC terpasang di tahun pertama' },
+        { prefix: '$', value: 100, suffix: 'K+', label: 'Penghematan biaya logistik di tahun pertama' },
+        { value: 99, suffix: '%', label: 'Pengiriman tepat waktu' },
+        { value: 1, suffix: '%', label: 'Selisih persediaan terhadap jadwal' },
+        { value: 5, suffix: '%+', label: 'Penurunan biaya tahunan yang konsisten' },
       ] as Stat[],
     },
     credentials: {
-      label: 'Kredensial',
+      label: 'Sertifikasi & Pendidikan',
       degree: { name: 'Sarjana (S1), Universitas Bina Nusantara', meta: 'Jakarta, 2002–2006' },
     },
     contact: {
       label: 'Kontak',
-      heading: 'Mari bicara.',
-      note: 'Baik soal pembayaran, operasional, atau peluang kolaborasi, saya senang terhubung.',
+      heading: 'Mari berbincang.',
+      note: 'Untuk diskusi seputar pembayaran, operasional, atau peluang kolaborasi, silakan kirim pesan.',
+      card: { role: 'Operations Leader · Jakarta' },
       form: {
-        name: 'Nama', email: 'Email Anda', message: 'Pesan', submit: 'Kirim pesan', sending: 'Mengirim…',
+        name: 'Nama', email: 'Email', message: 'Pesan', submit: 'Kirim pesan', sending: 'Mengirim…',
         success: 'Terima kasih, pesan Anda sudah terkirim. Saya akan segera membalas.',
-        error: 'Pesan belum terkirim. Silakan coba lagi, atau hubungi lewat LinkedIn.',
-        preview: 'Ini pratinjau. Pesan hanya dikirim dari situs live.',
+        error: 'Pesan belum terkirim. Silakan coba lagi, atau hubungi saya lewat LinkedIn.',
+        preview: 'Ini pratinjau. Pesan hanya terkirim dari situs live.',
       },
-      alt: 'Lebih suka LinkedIn?',
+      alt: 'Atau lewat LinkedIn',
     },
-    footer: { rights: 'Jakarta, Indonesia.', top: 'Kembali ke atas', local: 'Waktu lokal Jakarta' },
+    footer: { rights: 'Jakarta, Indonesia.', top: 'Kembali ke atas' },
   },
 };
 

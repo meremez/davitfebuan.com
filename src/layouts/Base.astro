@@ -13,16 +13,24 @@ const ogImage = `${site}/og-${lang}.png`;
 
 const personLd = {
   '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: canonical,
+  inLanguage: t.htmlLang,
+  mainEntity: {
   '@type': 'Person',
+  '@id': `${site}/#person`,
   name: 'Davit Febuan',
   url: site + '/',
-  image: `${site}/og-${lang}.png`,
+  image: `${site}/davit-febuan.jpg`,
+  description: t.meta.description,
+  knowsLanguage: ['id', 'en'],
   jobTitle: 'E-Channel Services Head',
   worksFor: { '@type': 'Organization', name: 'Bank Mega' },
   address: { '@type': 'PostalAddress', addressLocality: 'Jakarta', addressCountry: 'ID' },
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'Bina Nusantara University' },
   knowsAbout: ['EDC operations', 'QRIS', 'Payment gateway', 'ATM network management', 'S&OP', 'Supply chain', 'Lean Six Sigma'],
   sameAs: [LINKEDIN],
+  },
 };
 ---
 <html lang={t.htmlLang}>
@@ -74,7 +82,7 @@ const personLd = {
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
 </head>
 <body>
-  <a class="skip" href="#main">{lang === 'en' ? 'Skip to content' : 'Lewati ke konten'}</a>
+  <a class="skip" href="#main">{t.a11y.skip}</a>
   <slot />
   <script>
     import '../scripts/main.ts';

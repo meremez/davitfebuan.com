@@ -17,6 +17,13 @@ Personal site for Davit Febuan (operations leader, digital payment & e-channel, 
 - "push to staging" → commit, then `git push origin staging`. Vercel builds it (production branch in Vercel = `staging`).
 - "push to production" → `git push origin staging:main` (fast-forward only, never force). GitHub Actions uploads `dist/` to DomaiNesia over FTPS.
 
+## Project skills
+- `.claude/skills/` holds 12 vendored, pinned skills (GSAP, Vercel UI/writing guidelines, copy/SEO/schema/AI-SEO). Sources, commits and local changes are in `.claude/skills/SOURCES.md`. Never update them from the network without review.
+
+## Photos
+- `src/assets/portrait-studio.jpg` (hero) and `src/assets/portrait-batik.jpg` (contact card) are the owner's real photos, warm-graded to the brand palette. `public/davit-febuan.jpg` is the stable copy used in JSON-LD.
+- Do not use AI-generated portraits of the owner (decided 2026-11-24: they read as fake and undermine credibility).
+
 ## Rules
 - Copy lives in `src/i18n/content.ts`. Use only facts from the original site; ask before adding new claims (numbers, employers, dates).
 - Positioning is discreet: no "open to work" / "new role" language (owner is currently employed).

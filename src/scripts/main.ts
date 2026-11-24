@@ -44,7 +44,11 @@ function setMenu(open: boolean) {
   nav.classList.toggle('menu-open', open);
   menuBtn.setAttribute('aria-expanded', String(open));
   menuBtn.textContent = open ? menuBtn.dataset.close! : menuBtn.dataset.open!;
-  if (open) { lenis?.stop(); nav.classList.remove('is-hidden'); } else lenis?.start();
+  if (open) {
+    lenis?.stop();
+    nav.classList.remove('is-hidden');
+    $<HTMLAnchorElement>('a', menu)?.focus();
+  } else lenis?.start();
 }
 menuBtn.addEventListener('click', () => setMenu(menu.hidden));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
@@ -239,20 +243,17 @@ function sectionMotion() {
     });
   }
 
-  // Marquee: steady drift, nudged by scroll speed and direction.
+  // Marquee moves only with the page scroll, so nothing animates on its own
+  // (no autoplay motion that would need a pause control).
   const track = $('[data-marquee-track]');
   const group = track?.firstElementChild as HTMLElement | null;
   if (track && group) {
-    const loop = gsap.to(track, { x: () => -group.offsetWidth, duration: 38, ease: 'none', repeat: -1, invalidateOnRefresh: true });
-    let dir = 1;
+    const wrapX = gsap.utils.wrap(-group.offsetWidth, 0);
+    const setX = gsap.quickSetter(track, 'x', 'px');
     ScrollTrigger.create({
       start: 0, end: 'max',
-      onUpdate(self) {
-        dir = self.direction;
-        const boost = Math.min(Math.abs(self.getVelocity()) / 250, 6);
-        gsap.to(loop, { timeScale: dir * (1 + boost), duration: 0.2, overwrite: true });
-        gsap.to(loop, { timeScale: dir, duration: 1.2, delay: 0.2, ease: 'power2.out' });
-      },
+      onUpdate: (self) => setX(wrapX(-self.scroll() * 0.35)),
+      onRefresh: (self) => setX(wrapX(-self.scroll() * 0.35)),
     });
   }
 

@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets';
+import batik from '../assets/portrait-batik.jpg';
 import { LINKEDIN, type Content } from '../i18n/content';
 interface Props { t: Content }
 const { t } = Astro.props;
@@ -10,10 +12,16 @@ const f = t.contact.form;
       <span class="label">{t.contact.label}</span>
       <h2 id="contact-heading" data-split>{t.contact.heading}</h2>
       <p data-fade>{t.contact.note}</p>
-      <p class="contact-alt" data-fade>
-        <span>{t.contact.alt}</span>
-        <a class="link-line" href={LINKEDIN} target="_blank" rel="noopener">linkedin.com/in/davit-febuan ↗</a>
-      </p>
+      <div class="contact-card" data-fade>
+        <Picture src={batik} formats={['avif', 'webp']} alt={t.a11y.contactPortraitAlt} widths={[120, 240]}
+          sizes="120px" width={120} height={150} loading="lazy" />
+        <div class="contact-card-text">
+          <strong translate="no">Davit Febuan</strong>
+          <span>{t.contact.card.role}</span>
+          <span class="contact-alt">{t.contact.alt}
+            <a class="link-line" href={LINKEDIN} target="_blank" rel="noopener">linkedin.com/in/davit-febuan ↗</a></span>
+        </div>
+      </div>
     </div>
     <form class="form" id="contact-form" novalidate data-form
       data-sending={f.sending} data-success={f.success} data-error={f.error} data-preview={f.preview}>
@@ -23,7 +31,7 @@ const f = t.contact.form;
       </div>
       <div class="field">
         <label for="cf-email">{f.email}</label>
-        <input id="cf-email" name="email" type="email" autocomplete="email" required />
+        <input id="cf-email" name="email" type="email" autocomplete="email" spellcheck="false" required />
       </div>
       <div class="field">
         <label for="cf-message">{f.message}</label>

@@ -9,12 +9,12 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataUri = (p, type) => `data:${type};base64,${readFileSync(path.join(root, p)).toString('base64')}`;
-const portrait = dataUri('src/assets/davit-portrait.jpg', 'image/jpeg');
+const portrait = dataUri('src/assets/portrait-studio.jpg', 'image/jpeg');
 const logo = dataUri('src/assets/logo-df.png', 'image/png');
 
 const copy = {
   en: { eyebrow: 'Operations Leader · Digital Payment & E-Channel', line: 'From the warehouse floor to the payment rails. 15+ years in banking, digital and supply chain operations.' },
-  id: { eyebrow: 'Pemimpin Operasional · Pembayaran Digital & E-Channel', line: 'Dari lantai gudang ke jalur pembayaran. 15+ tahun di operasional perbankan, digital, dan rantai pasok.' },
+  id: { eyebrow: 'Operations Leader · Pembayaran Digital & E-Channel', line: 'Dari gudang ke infrastruktur pembayaran. 15+ tahun di operasional perbankan, digital, dan rantai pasok.' },
 };
 
 const html = (c) => `<!doctype html><html><head><meta charset="utf-8">
@@ -31,7 +31,7 @@ const html = (c) => `<!doctype html><html><head><meta charset="utf-8">
   p{position:absolute;left:0;bottom:0;max-width:600px;font-family:Fraunces,serif;font-style:italic;font-size:29px;line-height:1.25;font-variation-settings:'opsz' 72,'SOFT' 100}
   .photo{position:absolute;right:0;top:110px;width:300px;height:375px}
   .photo::after{content:'';position:absolute;inset:14px -14px -14px 14px;border:2px solid #c0812e;border-radius:4px;z-index:-1}
-  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:4px;filter:saturate(.88) contrast(1.03)}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;border-radius:4px}
   .url{position:absolute;right:0;bottom:4px}
 </style></head><body><div class="pad">
   <div class="top"><span class="label">${c.eyebrow}</span><img src="${logo}" alt=""></div>

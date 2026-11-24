@@ -22,7 +22,7 @@ const first = t.journey.stops[0];
           <li class="stop" data-stop data-short={s.short} data-chapter={s.chapter}>
             <span class="stop-date label">{s.date}</span>
             <h3>{s.role}</h3>
-            {s.company && <span class="company">{s.company}</span>}
+            {s.company && <span class="company" translate="no">{s.company}</span>}
             <p>{s.body}</p>
           </li>
         ))}

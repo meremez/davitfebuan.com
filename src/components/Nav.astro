@@ -12,15 +12,15 @@ const links = [
 ---
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="nav-mark" href={home + '#top'} data-scroll-to="#top" aria-label="Davit Febuan, home">
+    <a class="nav-mark" href={home + '#top'} data-scroll-to="#top" aria-label={t.a11y.home}>
       <Image src={logo} alt="" width={34} height={34} loading="eager" />
-      <span>Davit Febuan</span>
+      <span translate="no">Davit Febuan</span>
     </a>
-    <nav class="nav-links" aria-label="Sections">
+    <nav class="nav-links" aria-label={t.a11y.sections}>
       {links.map(([id, label]) => <a href={'#' + id} data-scroll-to={'#' + id} data-spy={id}>{label}</a>)}
     </nav>
     <div class="nav-tools">
-      <div class="lang" role="group" aria-label="Language">
+      <div class="lang" role="group" aria-label={t.a11y.language}>
         {lang === 'en'
           ? <><span aria-current="true">EN</span><a href="/id/" hreflang="id" lang="id" data-lang-link aria-label="Bahasa Indonesia">ID</a></>
           : <><a href="/" hreflang="en" lang="en" data-lang-link aria-label="English">EN</a><span aria-current="true">ID</span></>}

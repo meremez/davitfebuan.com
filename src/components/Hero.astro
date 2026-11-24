@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import portrait from '../assets/davit-portrait.jpg';
+import portrait from '../assets/portrait-studio.jpg';
 import type { Content } from '../i18n/content';
 interface Props { t: Content }
 const { t } = Astro.props;
@@ -12,14 +12,14 @@ const { t } = Astro.props;
       <p class="label" data-hero-fade>Jakarta · 6.2088° S, 106.8456° E</p>
     </div>
     <div class="hero-grid">
-      <h1 class="hero-name" id="hero-name" data-hero-name>
+      <h1 class="hero-name" id="hero-name" data-hero-name translate="no">
         <span class="row">Davit</span>
         <span class="row"><em>Febuan</em></span>
       </h1>
       <figure class="hero-photo" data-hero-photo>
         <div class="frame-outer">
         <div class="frame">
-          <Picture src={portrait} formats={['avif', 'webp']} alt="Portrait of Davit Febuan" widths={[360, 540, 720]}
+          <Picture src={portrait} formats={['avif', 'webp']} alt={t.a11y.portraitAlt} widths={[360, 540, 720, 871]}
             sizes="(max-width: 640px) 62vw, 360px" loading="eager" fetchpriority="high" data-parallax />
         </div>
         </div>
